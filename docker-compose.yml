@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  115-media:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"   # FastAPI (API + frontend SPA)
+      - "8095:8095"   # p115tiny302 (115 streaming)
+    volumes:
+      - ./data:/app/data
+    environment:
+      - REDIS_URL=redis://127.0.0.1:6379/0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

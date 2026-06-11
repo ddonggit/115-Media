@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+*.egg
+.venv/
+backend/.venv/
+
+# Celery
+backend/celerybeat-schedule
+
+# TypeScript
+*.tsbuildinfo
+frontend/ui-redesign-demo.html
+magnet.txt
+
+# Node
+node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+!.env.example
+
+# Data
+backend/data/*.db
+backend/data/*.db-shm
+backend/data/*.db-wal
+
+# Logs
+*.log
+
+# p115client (external library, has its own repo)
+p115client/
+
+# Temporary scripts
+fix_*.py

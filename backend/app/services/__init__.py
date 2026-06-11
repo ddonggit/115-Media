@@ -1,0 +1,1 @@
+"""Service layer — business logic helpers for notification, logging, etc."""
